@@ -1,0 +1,82 @@
+<h2>
+  Users ToDo
+</h2>
+
+<div style="padding : 100px">
+  <div style="border:1px solid black; height: 700px; overflow:scroll">
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of usertodos">
+                
+                <td> {{todo.id}}</td>
+                <td>
+                  <div *ngIf="todo.completed" class="strikethrough"> {{todo.title}}</div>
+                  <div *ngIf="!todo.completed"> {{todo.title}}</div>
+                </td>
+                <td>{{todo.completed}}</td>
+                <td><input type="checkbox" id="checkrads_1" (change)="changeStatus($event, todo)"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+      <!-- sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br>
+      sdffff<br> -->
+      
+  </div>
+  <div>
+    <table>
+      <td>
+        <textarea id="InputTodo" style="width: 750px">
+
+        </textarea>
+        
+      </td>
+      <td>
+          <button class="btn btn-primary" (click)="addnewTodo()">Add New Todo</button>
+        </td>
+    </table>
+  </div>
+</div>
+
+

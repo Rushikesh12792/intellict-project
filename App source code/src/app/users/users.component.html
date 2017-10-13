@@ -1,0 +1,86 @@
+<h2>Users</h2>
+<div class="row">
+  <div *ngFor="let user of users">
+    <!-- <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12"> -->
+    <div class="card">
+      <div class="card-header">
+        {{user.name}}
+      </div>
+      <div class="card-block">
+        <div class="card-title">
+          <span>UsersId : </span>{{user.id}}
+        </div>
+        <div class="card-text">
+          <table>
+            <tr>
+              <td>name :
+              </td>
+              <td>{{user.name}}
+              </td>
+            </tr>
+            
+            <tr>
+              <td>Username :
+              </td>
+              <td>{{user.username}}
+              </td>
+            </tr>
+
+            <tr>
+              <td>email :
+              </td>
+              <td>{{user.email}}
+              </td>
+            </tr>
+
+            <tr>
+              <td>Phone :
+              </td>
+              <td>{{user.phone}}
+              </td>
+            </tr>
+
+            <tr>
+              <td>Website :
+              </td>
+              <td>{{user.website}}
+              </td>
+            </tr>
+            <hr>
+            <tr>
+              <td>address :
+              </td>
+              <td>{{user.address.suite}},<br> {{user.address.street}},
+                <br> {{user.address.city}},
+                <br> {{user.address.zipcode}}
+                <br>
+              </td>
+            </tr>
+            <hr>
+            <tr>
+              <td>Geo Location :
+              </td>
+              <td>{{user.address.geo.lat}}, {{user.address.geo.lng}}
+              </td>
+            </tr>
+            <hr>
+            <tr>
+                <td>Company :
+                </td>
+                <td>
+                  {{user.company.name}}<br>
+                  {{user.company.catchPhrase}}<br>
+                  {{user.company.bs}}<br>
+                </td>
+              </tr>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-link" (click)="showUsersDetails(user);">View TODOS</button>
+        <!-- <button class="btn btn-sm btn-link">Footer Action 2</button> -->
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>
