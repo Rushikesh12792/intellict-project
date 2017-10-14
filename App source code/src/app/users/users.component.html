@@ -1,7 +1,6 @@
 <h2>Users</h2>
 <div class="row">
   <div *ngFor="let user of users">
-    <!-- <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12"> -->
     <div class="card">
       <div class="card-header">
         {{user.name}}
@@ -18,7 +17,7 @@
               <td>{{user.name}}
               </td>
             </tr>
-            
+
             <tr>
               <td>Username :
               </td>
@@ -65,22 +64,20 @@
             </tr>
             <hr>
             <tr>
-                <td>Company :
-                </td>
-                <td>
-                  {{user.company.name}}<br>
-                  {{user.company.catchPhrase}}<br>
-                  {{user.company.bs}}<br>
-                </td>
-              </tr>
+              <td>Company :
+              </td>
+              <td>
+                {{user.company.name}}<br> {{user.company.catchPhrase}}
+                <br> {{user.company.bs}}
+                <br>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
       <div class="card-footer">
         <button class="btn btn-sm btn-link" (click)="showUsersDetails(user);">View TODOS</button>
-        <!-- <button class="btn btn-sm btn-link">Footer Action 2</button> -->
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </div>

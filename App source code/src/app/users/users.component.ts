@@ -9,12 +9,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-  public users : any = [];
-  constructor(private _usersService : UsersService, private router: Router) { }
+  public users: any = [];
+  constructor(private _usersService: UsersService, private router: Router) { }
 
   ngOnInit() {
     this._usersService.getUsers()
-    .subscribe(
+      .subscribe(
       data => {
         console.log("data : ", data);
         this.users = data;
@@ -26,7 +26,7 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  showUsersDetails(user: any){
+  showUsersDetails(user: any) {
     localStorage.setItem('useriddetail', user.id);
     this.router.navigate(['/userstodo']);
 

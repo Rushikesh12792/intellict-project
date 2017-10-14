@@ -9,57 +9,55 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UsersdetailsComponent implements OnInit {
   userId: number;
-  usertodos : any;
-  constructor(private _usersdetailsService : UsersdetailsService, private router: Router) { }
+  usertodos: any;
+  constructor(private _usersdetailsService: UsersdetailsService, private router: Router) { }
 
   ngOnInit() {
     this.userId = Number(localStorage.getItem('useriddetail'));
 
     this._usersdetailsService.getUsersDetails(this.userId)
-    .subscribe(
+      .subscribe(
       data => {
         this.usertodos = data;
-        console.log( data);
-      },
-      error =>
-      {
-
-      }
-    )
-
-  }
-
-  addnewTodo(){
-    var title = (<HTMLInputElement>document.getElementById('InputTodo')).value;
-    console.log('called add new todo');
-    this._usersdetailsService.addNewTodo(this.userId, title)
-    .subscribe(
-      data => {
-        
-        this.usertodos.push(data);
-        console.log( 'added')
+        console.log(data);
       },
       error => {
 
       }
-    )
+      )
+
+  }
+
+  addnewTodo() {
+    var title = (<HTMLInputElement>document.getElementById('InputTodo')).value;
+    console.log('called add new todo');
+    this._usersdetailsService.addNewTodo(this.userId, title)
+      .subscribe(
+      data => {
+
+        this.usertodos.push(data);
+        console.log('added')
+      },
+      error => {
+
+      }
+      )
   }
 
   changeStatus(event, todo) {
-    var completed ;
+    var completed;
     if (event.target.checked) {
-      for(let i = 0; i < this.usertodos.length; i++) {
-        if(this.usertodos[i].id == todo.id){
+      for (let i = 0; i < this.usertodos.length; i++) {
+        if (this.usertodos[i].id == todo.id) {
           this.usertodos[i].completed = true;
           completed = true;
         }
       }
     }
     else {
-      for(let i = 0; i < this.usertodos.length; i++) {
+      for (let i = 0; i < this.usertodos.length; i++) {
 
-        if(this.usertodos[i].id == todo.id)
-        {
+        if (this.usertodos[i].id == todo.id) {
           this.usertodos[i].completed = false;
           completed = false;
         }
@@ -67,14 +65,14 @@ export class UsersdetailsComponent implements OnInit {
     }
 
     this._usersdetailsService.updateTodo(todo.id, completed)
-    .subscribe(
+      .subscribe(
       data => {
         console.log(' Updated backend');
       },
       error => {
 
       }
-    )
+      )
   }
 
 }

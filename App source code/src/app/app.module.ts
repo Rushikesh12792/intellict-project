@@ -13,8 +13,7 @@ import { UsersdetailsComponent } from './usersdetails/usersdetails.component';
 export const appRoutes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
   { path: 'users', component: UsersComponent },
-  { path: 'userstodo', component: UsersdetailsComponent },
-  // { path: 'login/:val/:email', component: MRLoginComponent },
+  { path: 'userstodo', component: UsersdetailsComponent }
 ]
 
 @NgModule({
